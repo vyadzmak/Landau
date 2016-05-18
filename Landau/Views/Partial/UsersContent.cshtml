@@ -1,0 +1,59 @@
+﻿
+<div id="content_cover" ng-controller="FileCtr" style="margin-top: 2%; margin-left: 5%; margin-right: 5%;">
+   
+     @*<div class="col-lg-12">*@
+       
+        <div class="panel panel-default" ng-if="User1Flag && PartialsStates[1]">
+            @Html.Partial("~/Views/Partial/ReportTable.cshtml")
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="morris-area-chart"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <div class="panel panel-default" ng-if="User1Flag && PartialsStates[0] && !RequestModeFlag">
+            @Html.Partial("~/Views/Partial/OrdersTable.cshtml")
+            <!-- /.panel-body -->
+        </div>
+        <div class="panel panel-default" ng-if="PartialsStates[8]">
+            @Html.Partial("~/Views/Partial/OrderTableForUser.cshtml")
+            <!-- /.panel-body -->
+        </div>
+    <div class="panel panel-default" ng-if="PartialsStates[9]">
+        @Html.Partial("~/Views/Partial/NewOrderForAnalyst.cshtml")
+        <!-- /.panel-body -->
+    </div>
+    <div class="panel panel-default" ng-if="PartialsStates[10]">
+        @Html.Partial("~/Views/Partial/UploadSomeFiles.cshtml")
+        <!-- /.panel-body -->
+    </div>
+        <!-- /.panel -->
+        <div class="panel panel-default" style="overflow-y: auto; " ng-if="User2Flag && PartialsStates[2]">
+            <!-- НОВАЯ ЗАЯВКА--> @Html.Partial("~/Views/Partial/NewOrderForUser.cshtml")
+        </div>
+        <!-- /.panel -->
+    @*</div>*@
+    <!-- /.col-lg-8 -->
+    @*<div class="col-lg-12">*@
+        <div class="panel panel-default" style="overflow-y: auto" ng-if="User2Flag && PartialsStates[3]">
+            <!-- СТАРАЯ ЗАЯВКА-->@Html.Partial("~/Views/Partial/DocumentsForUser.cshtml")
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <div class="panel panel-default" ng-if="User3Flag && PartialsStates[4]">
+            @Html.Partial("~/Views/Partial/DonutChart.cshtml")
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <div class="chat-panel panel panel-default" ng-if="User3Flag && PartialsStates[5]">
+            @Html.Partial("~/Views/Partial/Chat.cshtml")
+            <!-- /.panel-footer -->
+        </div>
+        <!-- /.panel .chat-panel -->
+        <div id="piece2" class="panel panel-default" ng-if="RequestModeFlag && PartialsStates[6]">
+            @Html.Partial("~/Views/Partial/DocumentsTable.cshtml")
+        </div>
+    @*</div>*@
+    <!-- /.col-lg-4 -->
+</div>

@@ -1,0 +1,50 @@
+﻿<div class="panel-heading">
+    <i class="fa fa-bar-chart-o fa-fw"></i> Мои заявки
+
+</div>
+<!-- /.panel-heading -->
+<div class="panel-body">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                @*<div ng-controller="FileCtr">*@
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>#</th>
+                                <th>Заявка №</th>
+                                <th>Компания</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- Таблица генерится из полученных из базы строк, в методы switchToRequest
+                вписываются id-шники -->
+
+                            <tr id="od.Id" ng-repeat="od in OrdersList" ng-click="switchPartials(3);getListOfDocsBIdForUser(od.Id);">
+
+                                <td><i class="glyphicon glyphicon-menu-right"></i></td>
+                                <td>{{$index + 1}}</td>
+                                <td>{{od.Id}}</td>
+                                <td>{{od.Name}}</td>
+                                <td>{{od.State}}</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                @*</div>*@
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.col-lg-4 (nested) -->
+        <div class="col-lg-8">
+            <div id="morris-bar-chart"></div>
+
+        </div>
+        <!-- /.col-lg-8 (nested) -->
+    </div>
+    <!-- /.row -->
+</div>

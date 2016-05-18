@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Pie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="~/Scripts/Pie.js">
+
+    </script>
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>*@
+<script src="~/Scripts/Chart.js"></script>
+<script>
+
+    angular.module('PieApp', [])
+        .controller('PieCtr', function ($scope, $compile) {
+            $scope.creatediv = function (count) {
+                for (var i = 0; i < count; i++) {
+                    var contDiv = document.createElement('div');
+                    contDiv.style.display = 'block';
+                    document.getElementsByTagName('body')[0].appendChild(contDiv);
+                    contDiv.innerHTML = '<input ng-model="count' + i + '"><input type="button" ng-click="createcolumn(count' + i + ')">';
+                    $compile(contDiv)($scope);
+
+                }
+            }
+            $scope.createcolumn = function (count) {
+                var itemlistDiv = document.createElement('div');
+                itemlistDiv.className = 'item-list';
+                document.getElementsByTagName('body')[0].appendChild(itemlistDiv);
+                for (var i = 0; i < count; i++) {
+                    var itemDiv = document.createElement('div');
+                    itemDiv.className = 'item';
+                    itemlistDiv.appendChild(itemDiv);
+
+                }
+            }
+
+        })
+
+
+</script>
+<base href="~/">
+
+
+@*<div class="row" style="text-align: center">
+            <div style="display: inline-block;  width: 100%; background: #E76D13">1</div>
+            <div style="display: inline-block; position: relative; width: 100%; background: #E76D13">1</div>
+
+        </div>
+        <div class="row">
+        <div class="box">2</div>
+        <div class="box">2</div>
+
+    </div>
+    <div class="row">
+        <div class="box">3</div>
+        <div class="box">3</div>
+
+    </div>*@
+
+<body ng-app="PieApp" ng-controller="PieCtr">
+    <input ng-model="count">
+
+    <input type="button" ng-click="creatediv(count)">
+    <br>
+
+
+
+</body>
+
+

@@ -1,0 +1,89 @@
+﻿
+<div class="panel-heading">
+    <i class="fa fa-clock-o fa-fw"></i> Новая заявка
+</div>
+<!-- /.panel-heading -->
+<div class="panel-body" >
+
+    <h3>Загрузка документов</h3>
+    <div ng-controller="FileCtr">
+        <td>Выбрать файлы : </td>
+        <td>
+
+
+            <form @*method="POST"*@ name="value" class="form-horizontal" role="form" @*onsubmit=" return checkcheck(); event.preventDefault();"*@>
+                @*@Html.TextBoxFor(Model => Model.File, new { type = "file", id = "etlfileToUpload", ng-file-select="selectFile($slctfl)", multiple="multiple" , accept = "image/*,application/msword, application/vnd.ms-excel,application/pdf,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" })
+                    @Html.ValidationMessage("CustomError")*@
+                <input id="etlfileToUpload" name="File" type="file" ng-model="fileloader" onchange=" var scope = angular.element(this).scope(); scope.showDescription(); scope.$apply();" multiple="multiple" accept="image/*,application/msword, application/vnd.ms-excel,application/pdf,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="form-control" />
+                <span ng-show="showLink">
+                    <input type="checkbox" ng-model="descriptioncheck">Комментировать
+                </span>
+
+                <p>
+                    <textarea id="Description" name="Description" ng-model="Description" placeholder="Описание" class="form-control" ng-show="descriptioncheck" ng-focus="submitted=false" ng-minlength=1
+                              ng-maxlength=100 required ng-pattern="/^[А-ЯёЁа-яa-zA-Z0-9,.'-~;^№\s]*$/"></textarea>
+                </p>
+
+                <span style="color: red" ng-show="submitted" id="spanDescription">
+                    <span ng-if="value.Description.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.Description.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.Description.$error.maxlength">Длинное значение!!!</span>
+                    <span ng-if="value.Description.$error.pattern">Ошибка заполнения!!!</span>
+                </span>
+
+                <p>
+                    <button ng-click="LoadFileData()" ng-show="showLink" class="btn btn-default">Загрузить</button>
+                </p>
+            </form>
+        </td>
+        <div id="dvLoading" hidden="true"></div>
+
+        <div id="uploading"></div>
+        <br>
+   
+
+       
+            <table class="table" ng-show="checktable">
+                <thead>
+                <th>Имя файла</th>
+                <th>
+                    Состояние
+                </th>
+              
+                </thead>
+                <tr ng-repeat="element in Files">
+                    <td><span ng-bind="element.FileName"></span></td>
+                    <td>
+                        <span ng-bind="element.State"></span>
+                    </td>
+                </tr>
+            </table>
+            <input ng-click="confirm()" value="Подтвердить" ng-show="checktable" class="btn btn-default" />
+        <div class="bottom-layer">
+            </div>
+                @*<nav>
+                <ul class="pagination">
+                    <li ng-class="prevPageDisabled()">
+                        <a href ng-click="prevPage()">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+                        <a href="">{{n+1}}</a>
+                    </li>
+                    <li ng-class="nextPageDisabled()">
+                        <a href ng-click="nextPage()">Next »</a>
+                    </li>
+                </ul>
+
+            </nav>*@
+
+
+
+
+
+
+
+            </div>
+
+
+</div>
+<!-- /.panel-body -->

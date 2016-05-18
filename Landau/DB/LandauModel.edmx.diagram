@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc8cd8ca51e44401bb1805b5125cb4a3" Name="Diagram1">
+        <EntityTypeShape EntityType="LandauModel.AnalyticData" Width="1.5" PointX="24.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.AnalyzeMessageType" Width="1.5" PointX="11.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.BarChart" Width="1.5" PointX="26.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.BarChartElement" Width="1.5" PointX="29" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Body" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.BodyModal" Width="1.5" PointX="29" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.BorderPosition" Width="1.5" PointX="17.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.BorderStyle" Width="1.5" PointX="20" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Cell" Width="1.5" PointX="21" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.CellComments" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.CellModal" Width="1.5" PointX="33.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.CellModalStyle" Width="1.5" PointX="35.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.CellStyles" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.CellStyleTemplates" Width="1.5" PointX="18.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ChartTypeCatalog" Width="1.5" PointX="29" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Clients" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Comments" Width="1.5" PointX="10.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Document" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.DocumentControlVersion" Width="1.5" PointX="13.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.DocumentInfo" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Documents" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.DocumentState" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.DocumentTypes" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.HtmlForms" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.LineChart" Width="1.5" PointX="26.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.LineChartElement" Width="1.5" PointX="29" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.LineChartPoint" Width="1.5" PointX="31.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.LineType" Width="1.5" PointX="17.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.LogTable" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ModalView" Width="1.5" PointX="17.75" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ModalViewCell" Width="1.5" PointX="22.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ModalViewRow" Width="1.5" PointX="20" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.MoveCategories" Width="1.5" PointX="29.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.MoveTable" Width="1.5" PointX="26.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.MoveTableCell" Width="1.5" PointX="34.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.MoveTableRow" Width="1.5" PointX="32" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.NonStackedBarChart" Width="1.5" PointX="26.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.NonStackedBarChartColumn" Width="1.5" PointX="29" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.NonStackedBarChartElement" Width="1.5" PointX="31.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Operations" Width="1.5" PointX="18" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.OperationState" Width="1.5" PointX="15.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.OperationType" Width="1.5" PointX="15.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.PieChart" Width="1.5" PointX="29" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.PieChartElement" Width="1.5" PointX="31.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Projects" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ProjectStates" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.RelationCells" Width="1.5" PointX="23.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ReportCellTypeCatalog" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ReportDocumentTypeCatalog" Width="1.5" PointX="15.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Row" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.RowModal" Width="1.5" PointX="31.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Settings" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Sheet" Width="1.5" PointX="10.5" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.SourceDocumentCell" Width="1.5" PointX="18" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.SourceDocumentRow" Width="1.5" PointX="15.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.SourceDocuments" Width="1.5" PointX="11.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.SourceDocumentSheet" Width="1.5" PointX="13.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.SourceDocumentStates" Width="1.5" PointX="9" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.StackedBarchart" Width="1.5" PointX="26.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.StackedBarchartColumn" Width="1.5" PointX="29" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.StackedBarchartElement" Width="1.5" PointX="34.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.TableGroups" Width="1.5" PointX="15.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.TableModal" Width="1.5" PointX="26.75" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.TypeAnalyticData" Width="1.5" PointX="22.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.UserLogins" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.UserRoles" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.Users" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.ViewTypes" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandauModel.AnalyzeLog" Width="1.5" PointX="13.5" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="LandauModel.FK_AnalyticData_ModalViewCell" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_AnalyticData_TypeAnalyticData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_BarChart_AnalyticData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_LineChart_AnalyticData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_MoveTable_AnalyticData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_NonStackedBarChart_AnalyticData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_StackedBarchart_AnalyticData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_TableModal_AnalyticData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_AnalyzeLog_AnalyzeMessageType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_BarChartElement_BarChart" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_BodyModal_TableModal" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_RowModal_BodyModal" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_BorderStyle_BorderPosition" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_BorderStyle_LineType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Cell_ReportCellTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Cell_ReportDocumentTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Cell_Row" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_RelationCells_Cell" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_CellModal_RowModal" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_CellModalStyle_CellModal" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_CellStyleTemplates_CellStyleTemplates" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_LineChartPoint_ChartTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_NonStackedBarChartElement_ChartTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_PieChartElement_ChartTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_StackedBarchartElement_ChartTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Projects_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Users_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Comments_Documents" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_DocumentControlVersion_Documents" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_DocumentControlVersion_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Documents_DocumentInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_AnalyzeLog_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Documents_DocumentState" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Documents_DocumentTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Documents_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Documents_ViewTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Sheet_Documents" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_LineChartElement_LineChart" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_LineChartPoint_LineChartElement" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_LineChartPoint_ReportCellTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_LineChartPoint_ReportDocumentTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_ModalViewRow_ModalView" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_ModalViewCell_RowModal" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_MoveCategories_MoveCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_MoveTableRow_MoveCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_MoveTableRow_MoveTable" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_MoveTableCell_MoveTableRow" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_NonStackedBarChartColumn_NonStackedBarChart" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_NonStackedBarChartElement_NonStackedBarChartColumn" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_NonStackedBarChartElement_ReportCellTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_NonStackedBarChartElement_ReportDocumentTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Operations_OperationState" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Operations_OperationType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_PieChartElement_PieChart" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_PieChartElement_ReportCellTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_PieChartElement_ReportDocumentTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Projects_ProjectStates" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocuments_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocumentCell_ReportCellTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_StackedBarchartElement_ReportDocumentTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocumentCell_ReportDocumentTypeCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_StackedBarchartElement_ReportDocumentTypeCatalog1" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocumentCell_SourceDocumentRow" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocumentRow_SourceDocumentSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocuments_SourceDocumentStates1" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocuments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_SourceDocumentSheet_SourceDocuments" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_StackedBarchartColumn_StackedBarchart" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_StackedBarchartElement_StackedBarchartColumn" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_UserLogins_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="LandauModel.FK_Users_UserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

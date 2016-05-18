@@ -1,0 +1,75 @@
+﻿<div class="panel-heading">
+    <i class="fa fa-bar-chart-o fa-fw"></i>Отчеты
+    <div class="pull-right">
+    </div>
+</div>
+<div class="panel-body" ng-controller="OrderCtr" style="max-height: 20%; height: 500px; overflow-y: scroll;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="container">
+                <label>Имя отчета</label>
+                <input type="text" name="searchinput" placeholder="Имя отчета" class="form-control input-xs" ng-model="query">
+
+                <select ng-model="itemsPerPage">
+
+                    <option selected="selected">5</option>
+                    <option>10</option>
+                    <option>15</option>
+                </select>
+            </div>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Id</th>
+                            <th ng-click="sort('FileName')">
+                                Название отчета
+                                <a href="" style="color: white"><i class="glyphicon" ng-class="{'glyphicon-chevron-up':isSortUp('FileName'),'glyphicon-chevron-down':isSortDown('FileName')}"></i></a>
+                            </th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Таблица генерится из полученных из базы строк, в методы switchToRequest
+                        вписываются id-шники -->
+
+                        <tr id="docRow" ng-repeat="doc in filteredOrder=(Order|filter:{FileName:query})|orderBy:sortField:reverse|offset: currentPage*itemsPerPage  | limitTo: itemsPerPage">
+                            <td ng-click="switchPartials(7); getId(doc.Id); getSign('docRow');"><i class="glyphicon glyphicon-chevron-right"></i></td>
+                            @*<td>{{$index + 1}}</td>*@
+                            <td id="clikableCell" ng-click="switchPartials(7); getId(doc.Id); getSign('docRow');"><span ng-bind="doc.Id"></span></td>
+                            <td id="clikableCell" ng-click="switchPartials(7); getId(doc.Id); getSign('docRow');"><span ng-bind="doc.FileName"></span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <span class="glyphicon glyphicon-align-justify" />
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a ng-click="zakup(doc.Id)">Закуп</a></li>
+                                        <li><a>Переброска</a></li>
+                                        <li><a ng-click="log(doc.Id)">Логирование</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination">
+                        <li ng-class="prevPageDisabled()">
+                            <a href ng-click="prevPage()">« Предыдущая</a>
+                        </li>
+                        <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+                            <a href="">{{n+1}}</a>
+                        </li>
+                        <li ng-class="nextPageDisabled()">
+                            <a href ng-click="nextPage()">Следующая »</a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

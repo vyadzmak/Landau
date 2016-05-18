@@ -1,0 +1,101 @@
+﻿<!--<div class="btn-group">
+    <button class="btn btn-default" ng-click="switchModes(0)">User 1</button>
+    <button class="btn btn-default" ng-click="switchModes(1)">User 2</button>
+    <button class="btn btn-default" ng-click="switchModes(2)">User 3</button>
+</div>-->
+<div class="sidebar-nav navbar-collapse" ng-if="!RequestModeFlag">
+    <div ng-if="User1Flag">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side1" style="display: none;" href="" ng-click="switchPartials(0)"><i class="glyphicon glyphicon-list"></i>Заявки</a>
+            </li>
+        </ul>
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side2" style="display: none;" href="" ng-click="switchPartials(9)"><i class="glyphicon glyphicon-list"></i>Новая заявка</a>
+            </li>
+        </ul>
+    </div>
+    <div ng-if="User2Flag">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side3" style="display: none;" href="" ng-click="switchPartials(2)"><i class="glyphicon glyphicon-align-left"></i>Новая заявка</a>
+        </ul>
+        <ul class="nav" id="side-menu" >
+            <li>
+                <a id="side4" style="display: none;" href="" ng-click="switchPartials(8) "><i class="glyphicon glyphicon-user"></i>Мои заявки</a>
+            </li>
+        </ul>
+    </div>
+    <div ng-if="User3Flag">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side5" style="display: none;" href="" ng-click="switchPartials(4)"><i class="glyphicon glyphicon-align-left"></i>Donut chart</a>
+        </ul>
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side6" style="display: none;" href="" ng-click="switchPartials(5)"><i class="glyphicon glyphicon-user"></i>Chat</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="sidebar-nav navbar-collapse" ng-if="RequestModeFlag">
+    <div>
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side7" style="display: none;" href="" ng-click="switchPartials(6)"><i class="glyphicon glyphicon-th-list"></i> Документы</a>
+            </li>
+        </ul>
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side8" style="display: none;" href="" ng-click="switchPartials(1)"><i class="glyphicon glyphicon-ok"></i> Отчёты</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side9" style="display: none;" href="" ng-click="switchPartials(2)"><i class="glyphicon glyphicon-info-sign"></i> Информация</a>
+            </li>
+        </ul>
+        <ul class="nav" id="side-menu">
+            <li>
+                <a id="side10" style="display: none;" href="" ng-click="switchPartials(3)"><i class="glyphicon glyphicon-time"></i> Состояние</a>
+            </li>
+        </ul>
+        <ul class="nav" id="side-menu" style="margin-top: 15px">
+            <li>
+                <a id="side11" style="display: none;" href="" ng-click="switchModes(2);"><i class="glyphicon glyphicon-arrow-left"></i> К заявкам</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--<div ng-show="PartialsStates[7]">
+        <div class="col-md-6 pull-right">
+            <ul class="nav" style="width: 100%">
+                <li>
+                    <a id="side12" style="display: none;" href="" ng-click="exportDocument()"><i class="glyphicon glyphicon-save-file"></i><div>Экспорт</div></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div ng-show="PartialsStates[6]">
+        <div class="col-md-6 pull-right">
+            <ul class="nav" style="width: 100%">
+                <li>
+                    <a id="side13" style="display: none;" href="" ng-click="showOpenField()"><i class="glyphicon glyphicon-open-file"></i><div>Импорт</div></a>
+                </li>
+            </ul>
+        </div>
+        <div id="side14" style="display: none;" ng-show="showOpen">
+            <ul class="nav" style="width: 100%">
+                <li>
+                    <div class="btn btn-default file_upload">Выбрать файл<input type="file" id="file" accept=".xlsx, .xls" /></div>
+                    <input class="btn btn-default" type="button" ng-click="importDocument()" />
+                    <img id="fileView" />
+                </li>
+            </ul>
+        </div>
+    </div>-->
+</div>

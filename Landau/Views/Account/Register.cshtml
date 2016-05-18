@@ -1,0 +1,178 @@
+﻿@model Landau.Models.UserModel.UserModel
+@{
+    ViewBag.Title = "Регистрация";
+}
+<head>
+    <base id="myBase" href="~/">
+
+</head>
+<h2>@ViewBag.Title</h2>
+@*<script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function ($scope) {
+            $scope.user = 'John Doe';
+
+        });
+    </script>*@
+
+@*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {*@
+<body ng-app="RegistrationApp" ng-controller="RegistrationCtr">
+    <form @*action="@Request.RawUrl"*@ @*method="POST"*@ name="value" class="form-horizontal" ng-model="RegisterForm" role="form" id="FormRegistrSubmit" @*onsubmit=" return checkcheck(); event.preventDefault();"*@>
+      
+        @Html.AntiForgeryToken()
+        <h4>Создание новой учетной записи</h4>
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName, "Фамилия", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @*@Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @id = "registrationlastname" })*@
+                <input id="LastName" name="LastName" ng-model="user.LastName" placeholder="Фамилия" class="form-control" type="text" ng-model="LastName" ng-minlength=2
+                       ng-maxlength=30 required ng-pattern="/^[А-Яа-яA-Za-z,.'-\s]*$/" />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanLastName">
+                    <span ng-if="value.LastName.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.LastName.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.LastName.$error.maxlength">Длинное значение!!!</span>
+                    <span ng-if="value.LastName.$error.pattern">Ошибка заполнения !!!!</span>
+                </span>
+            </div>
+        </div>
+        @**@
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName, "Имя", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="FirstName" name="FirstName" ng-model="user.FirstName" placeholder="Имя" class="form-control" type="text" ng-model="FirstName" ng-minlength=2
+                       ng-maxlength=30 required ng-pattern="/^[А-Яа-яA-Za-z,.'-\s]*$/" />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanFirstName">
+                    <span ng-if="value.FirstName.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.FirstName.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.FirstName.$error.maxlength">Длинное значение!!!</span>
+                    <span ng-if="value.FirstName.$error.pattern">Ошибка заполнения !!!!</span>
+                </span>
+                @*@Html.TextBoxFor(m => m.FirstName, new {@class = "form-control", @id = "registrationfirstname"})*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SecondName, "Отчество", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="SecondName" name="SecondName" ng-model="user.SecondName" placeholder="Отчество" class="form-control" type="text" ng-model="SecondName" ng-minlength=2
+                       ng-maxlength=30 required ng-pattern="/^[А-ЯёЁа-яa-zA-Z^\S]*$/" />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanSecondName">
+                    <span ng-if="value.SecondName.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.SecondName.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.SecondName.$error.maxlength">Длинное значение!!!</span>
+                    <span ng-if="value.SecondName.$error.pattern">Ошибка заполнения !!!!</span>
+                </span>
+                @*@Html.TextBoxFor(m => m.SecondName, new { @class = "form-control", @id = "registrationsecondname" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, "Email", new { @class = "col-md-2 control-label", @id = "registrationemail" })
+            <div class="col-md-10">
+                <input id="Email" name="Email" type="email" ng-model="user.Email" ng-change="changeemail()" placeholder="Email" class="form-control" required />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanEmail">
+                    <span ng-if="value.Email.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.Email.$error.email">Некорректный адрес!!!</span>
+
+
+
+                </span>
+                <span style="color: red" ng-show="showLink" ng-bind="checkemail"></span>
+
+                @*@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PhoneNumber, "Номер телефона", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="PhoneNumber" name="PhoneNumber" ng-model="user.PhoneNumber" placeholder="Номер телефона" class="form-control" type="text" ng-model="PhoneNumber" ng-minlength=3
+                       ng-maxlength=30 required ng-pattern="/^[0-9]*$/" />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanPhoneNumber">
+                    <span ng-if="value.PhoneNumber.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.PhoneNumber.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.PhoneNumber.$error.maxlength">Длинное значение!!!</span>
+                    <span ng-if="value.PhoneNumber.$error.pattern">Ошибка заполнения!!!</span>
+                </span>
+                @*@Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @id = "registrationphonenumber" })*@
+            </div>
+        </div>
+        <div id="dvLoading" hidden="true"></div>
+       
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.NameOrganisation, "Наименование Организации", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="NameOrganisation" name="NameOrganisation" ng-model="user.NameOrganisation" placeholder="Наименование организации" class="form-control" type="text" ng-model="NameOrganisation" ng-minlength=1
+                       ng-maxlength=30 required ng-pattern="/^[А-ЯёЁа-яa-zA-Z0-9,.'-~^№\s]*$/" />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanNameOrganisation">
+                    <span ng-if="value.NameOrganisation.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.NameOrganisation.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.NameOrganisation.$error.maxlength">Длинное значение!!!</span>
+                    <span ng-if="value.NameOrganisation.$error.pattern">Ошибка заполнения!!!</span>
+                </span>
+                @*@Html.TextBoxFor(m => m.NameOrganisation, new { @class = "form-control", @id = "registrationnameorganisation" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.RegistrationNumber, "Регистрационный номер", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="RegistrationNumber" name="RegistrationNumber" ng-model="user.RegistrationNumber" type="number" placeholder="Регистрационный номер" class="form-control" type="text" ng-model="RegistrationNumber" ng-minlength=2
+                       ng-maxlength=30 required />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanRegistrationNumber">
+                    <span ng-if="value.RegistrationNumber.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.RegistrationNumber.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.RegistrationNumber.$error.maxlength">Длинное значение!!!</span>
+                    <span ng-if="value.RegistrationNumber.$error.number">Некорректное значение значение!!!</span>
+                </span>
+                @*@Html.TextBoxFor(m => m.RegistrationNumber, new { @class = "form-control", @id = "registrationnumberreg" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, "Пароль", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="Password" name="Password" type="password" ng-change="changepassword()" ng-model="user.Password" placeholder="Пароль" class="form-control" ng-model="Password" ng-minlength=6
+                       ng-maxlength=150 required />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanPasswordValidation">
+                    <span ng-if="value.Password.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.Password.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.Password.$error.maxlength">Длинное значение!!!</span>
+                </span>
+                @*@Html.PasswordFor(m => m.Password, new { @class = "form-control", @id = "registrationpassword" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, "Подтверждение пароля", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input id="ConfirmPassword" name="ConfirmPassword" type="password" ng-change="changepassword()" ng-model="user.ConfirmPassword" placeholder="Подтверждение пароля" class="form-control" ng-model="ConfirmPassword" ng-minlength=6
+                       ng-maxlength=150 required />
+                <span style="color: red" ng-show="submitted" hidden="true" id="spanConPasswordValidation">
+                    <span ng-if="value.ConfirmPassword.$error.required">Должно быть заполнено!!!</span>
+                    <span ng-if="value.ConfirmPassword.$error.minlength">Короткое значение!!!</span>
+                    <span ng-if="value.ConfirmPassword.$error.maxlength">Длинное значение!!!</span>
+                </span>
+                <span style="color: red" ng-show="showPassword" ng-bind="checkpassword"></span>
+                @*@Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @id = "registrationpasswordcom" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" @*ng-click="checkcheck()"*@ ng-click="submitted=true" id="myBtn" class="btn btn-default" value="Регистрация" />
+            </div>
+        </div>
+        <h3 ng-if="showLink" ng-bind="register"></h3>
+
+        @*<div class="col-md-offset-2 col-md-10">
+                <input ng-click="checkcheck()" class="btn btn-default" value="Регистрация" />
+            </div>*@
+        <div id="mask" hidden="true"></div>
+    </form>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Landau</p>
+    </footer>
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

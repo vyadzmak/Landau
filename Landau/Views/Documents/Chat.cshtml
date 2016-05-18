@@ -1,0 +1,83 @@
+﻿@model Landau.Models.UserModel.UserModel
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <base href="~/">
+    <title>Ionic Template</title>
+    <script>
+        var sessionName = '@Session["Name"]';
+        var sessionRole = '@Session["Roles"]';
+        var sessionUserId = '@Session["UserId"]';
+
+       // document.getElementById("showmessages").hidden = "true";
+        $(document).ready(function () {
+            checkpage();
+
+
+        });
+    </script>
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/1.1.1/js/ionic.bundle.js"></script>
+
+    <script src="~/Scripts/Chat.js"></script>
+</head>
+@{
+    ViewBag.Title = "Чат";
+}
+<body ng-app="ionicApp" ng-controller="Messages" data-ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+
+
+    <ion-pane class=" messaging-view ">
+
+        @*<ion-header-bar class=" bar-calm ">
+
+            </ion-header-bar>*@
+        <div id="dvLoading"></div>
+
+        <ion-content class="content-stable "
+                     on-swipe-left="hideTime=false "
+                     on-swipe-right="hideTime=true " hidden="true" id="ion-content">
+
+            <ul class="nav" id="back" style="margin-top: 1%; width: 10%; margin: 0%" hidden="true">
+                <li>
+                    <a href="~/Cabinet/Cabinet" style="margin: 5%; border-radius: 10px"><i class="glyphicon glyphicon-arrow-left"></i> К заявкам</a>
+                </li>
+            </ul>
+            <div ng-repeat="message in messages "
+                 ng-class="{other: message.SendUserId  !=myId}"
+                 class=" messages ">
+
+                <div class="message" ng-class="slide-right">
+                    <span class=" spanionicname" ng-bind="message.SendUser">
+                    </span>
+
+                    <span ng-if="message.SendUserId!=myId" class="spanionic-gray" ng-bind="message.Data"></span>
+                    <span ng-if="message.SendUserId==myId" class="spanionic" ng-bind="message.Data"></span>
+                </div>
+
+                <div class="time " ng-class="{ 'slide-right': hideTime, '': !hideTime} " ng-bind="message.Date"></div>
+
+
+            </div>
+
+        </ion-content>
+
+        <div id="footer" hidden="true">
+
+            <ion-footer-bar keyboard-attach class="bar-stable item-input-inset ">
+                <label class="item-input-wrapper ">
+                    @*<span style="width: 100%">*@
+
+                    <input type="text" placeholder="Введите свое сообщение " on-return="sendMessage(); closeKeyboard() " ng-model="data.message " ng-focus="inputUp() " ng-blur="inputDown() " style="width: 100%; max-width: 100%; padding-right:8px">
+                    @*</span>*@
+                </label>
+                <button class="button button-clear " ng-click="sendMessage() ">
+                    <strong> Отправить</strong>
+                </button>
+            </ion-footer-bar>
+        </div>
+    </ion-pane>
+</body>

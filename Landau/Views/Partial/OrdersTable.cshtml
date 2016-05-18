@@ -1,0 +1,61 @@
+﻿<div class="panel-heading">
+    <i class="fa fa-bar-chart-o fa-fw"></i> Заявки
+
+</div>
+<!-- /.panel-heading -->
+<div class="panel-body" style="height: 600px; overflow-y: scroll;">
+    <div class="row">
+        <div id="operations_content" class="col-lg-12" ng-controller="OperationsController">
+            <div class="dropdown" style="margin: 10px;">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true">
+                    Операции
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="" ng-click="getAllOrders()">Консолидация</a></li>
+                    <li><a href="#">Another action</a></li>
+                    
+                </ul>
+            </div>
+            <div class="table-responsive">
+                <table id="orders_list_table"></table>
+                @*<div ng-controller="FileCtr">*@
+               <!-- <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th>Заявка №</th>
+                        <th>Компания</th>
+                        <th>Статус</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <!-- Таблица генерится из полученных из базы строк, в методы switchToRequest
+                    вписываются id-шники -->
+
+                   <!-- <tr id="od.Id" ng-repeat="od in OrdersList" ng-click="switchModes(3); getListOfDocsById(od.Id);">
+
+                        <td><i class="glyphicon glyphicon-menu-right"></i></td>
+                        <td>{{$index + 1}}</td>
+                        <td>{{od.Id}}</td>
+                        <td>{{od.Name}}</td>
+                        <td>{{od.State}}</td>
+                    </tr>
+
+                    </tbody>
+
+                </table> -->
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.col-lg-4 (nested) -->
+        <div class="col-lg-8">
+            <div id="morris-bar-chart"></div>
+
+        </div>
+        <!-- /.col-lg-8 (nested) -->
+    </div>
+    <!-- /.row -->
+</div>

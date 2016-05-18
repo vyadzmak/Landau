@@ -1,0 +1,1043 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="usersApp">
+<head>
+    <base href="~/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Content/scripts")
+    @Styles.Render("~/Content/metismenu")
+    @Styles.Render("~/Content/morris")
+    @Styles.Render("~/Content/styles")
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="~/Styles/fileInput.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script>google.load("visualization", "1", { packages: ["table", "corechart", "bar"] });</script>
+
+    <!--<script src="~/Scripts/User/TransactionsWidget.js"></script>-->
+    @model Landau.Models.MyDocumentModels.EnterpriseSheetModels.JsonModel
+    <link href="~/Scripts/MoveTable/bootstrap-table.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/MoveTable/bootstrap-table.js"></script>
+
+</head>
+@{
+    ViewBag.Title = "Личный кабинет";
+}
+<body ng-controller="switchController" class="cabinet-block" style="margin-left: 0px; margin-right: 0px;">
+
+    <div id="wrapper" style="height: 100%; margin-left: -1%; margin-right: 0px;" ng-controller="docsController">
+        <div id="dvLoading"></div>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" hidden="true" id="showredmessage">
+            <div class="navbar-header">
+                <div class="row">
+                    <div data-toggle="dropdown" class="dropdown-toggle col-md-4">
+                        <button style="background-color: #e7e7e7; margin: 15px;" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-align-justify" />
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li ng-if="User1Flag && !RequestModeFlag">
+                                <a id="side1" style="display: none;" href="" ng-click="switchPartials(0)"><i class="glyphicon glyphicon-list"></i>Заявки</a>
+                            </li>
+                            <li ng-if="User1Flag && !RequestModeFlag">
+                                <a id="side2" style="display: none;" href="" ng-click="switchPartials(9)"><i class="glyphicon glyphicon-list"></i>Новая заявка</a>
+                            </li>
+                            <li ng-if="User2Flag && !RequestModeFlag">
+                                <a id="side3" style="display: none;" href="" ng-click="switchPartials(2)"><i class="glyphicon glyphicon-align-left"></i>Новая заявка</a>
+                            <li ng-if="User2Flag">
+                                <a id="side4" style="display: none;" href="" ng-click="switchPartials(8) "><i class="glyphicon glyphicon-user"></i>Мои заявки</a>
+                            </li>
+                            <li ng-if="User3Flag && !RequestModeFlag">
+                                <a id="side5" style="display: none;" href="" ng-click="switchPartials(4)"><i class="glyphicon glyphicon-align-left"></i>Donut chart</a>
+                            </li>
+                            <li ng-if="User3Flag && !RequestModeFlag">
+                                <a id="side6" style="display: none;" href="" ng-click="switchPartials(5)"><i class="glyphicon glyphicon-user"></i>Chat</a>
+                            </li>
+                            <li ng-if="RequestModeFlag">
+                                <a id="side7" style="display: none;" href="" ng-click="switchPartials(6)"><i class="glyphicon glyphicon-th-list"></i> Документы</a>
+                            </li>
+                            <li ng-if="RequestModeFlag">
+                                <a id="side8" style="display: none;" href="" ng-click="switchPartials(1)"><i class="glyphicon glyphicon-ok"></i> Отчёты</a>
+                            </li>
+                            <li ng-if="RequestModeFlag">
+                                <a id="side9" style="display: none;" href="" ng-click="switchPartials(2)"><i class="glyphicon glyphicon-info-sign"></i> Информация</a>
+                            </li>
+                            <li ng-if="RequestModeFlag">
+                                <a id="side10" style="display: none;" href="" ng-click="switchPartials(3)"><i class="glyphicon glyphicon-time"></i> Состояние</a>
+                            </li>
+                            <li ng-if="RequestModeFlag">
+                                <a id="side11" style="display: none;" href="" ng-click="switchModes(2);"><i class="glyphicon glyphicon-arrow-left"></i> К заявкам</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div ng-show="showAnalyticsLabel == true" class="dropdown-toggle col-md-4">
+                        <button style="background-color: #e7e7e7; margin: 15px;" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-align-left" />
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li ng-if="true">
+                                <a href="" onclick="getAnalytics(currentDocId, 'ОПиУ')"><i class="glyphicon glyphicon-arrow-left"></i> Аналитика: ОПиУ</a>
+                            </li>
+                            <li ng-if="true">
+                                <a href="" onclick="getAnalytics(currentDocId, 'ОДДС')"><i class=" glyphicon glyphicon-arrow-left"></i> Аналитика: ОДДС</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.navbar-header -->
+            <cf class="nav navbar-top-links navbar-right">
+                <li class="dropdown" ng-controller="MessagesCtr">
+
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="glyphicon glyphicon-envelope glyphicon_margin" aria-hidden="true" ng-if="showmessages==0"></span><span class="glyphicon glyphicon-chevron-down " ng-if="showmessages==0"></span>
+                        <span class="glyphicon glyphicon-envelope glyphicon_margin" aria-hidden="true" ng-if="showmessages==1" style="color: red"></span><span class="glyphicon glyphicon-chevron-down" ng-if="showmessages==1" style="color: red"></span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-messages">
+
+                        <li ng-repeat="element in Messages">
+                            <a href="@Url.Action("Chat", "Documents")/?documentid={{element.DocumentId}}">
+                                <div>
+                                    <strong ng-bind="element.SendUser"></strong>
+                                    <span class="pull-left text-muted" id="time">
+                                        <em ng-bind="element.Date"></em>
+                                    </span>
+                                </div>
+                                <div ng-bind="element.Data"
+                                     class="datatime"></div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li ng-show="showmessages==0">
+                            <a class="text-center">
+                                <strong>Новых сообщений нет</strong>
+
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="Account/Killsession/?check=1"><i class="fa fa-sign-out fa-fw"></i>Выход</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </cf>
+            <!-- /.navbar-top-links -->
+            <!--<div class="navbar-default sidebar" role="navigation" style="width: 17%">-->
+            @*Html.Partial("~/Views/Partial/Sidebar.cshtml")*@
+            <!-- /.sidebar-collapse -->
+            <!-- </div> -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div id="sv" ng-controller="renderController" style="position: inherit; width: 100%; height: 100%;">
+            @*<div id="sv" class="row" style="overflow-y: scroll" ng-hide="!PartialsStates[7]">*@
+            @*@Html.Partial("~/Views/Partial/SheetsView.cshtml")*@
+            @*</div>*@
+            <div id="piece" style="display: none;" ng-hide="false">
+                @Html.Partial("~/Views/Partial/UsersContent.cshtml")
+            </div>
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    @*<script src="../../startbootstrap-sb-admin-2-1.0.7/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../../startbootstrap-sb-admin-2-1.0.7/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../../startbootstrap-sb-admin-2-1.0.7/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <!-- Morris Charts JavaScript -->
+        <script src="../../startbootstrap-sb-admin-2-1.0.7/bower_components/raphael/raphael-min.js"></script>
+        <script src="../../startbootstrap-sb-admin-2-1.0.7/bower_components/morrisjs/morris.min.js"></script>
+        <script src="../../startbootstrap-sb-admin-2-1.0.7/js/morris-data.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="../../startbootstrap-sb-admin-2-1.0.7/dist/js/sb-admin-2.js"></script>
+        <script src="../../startbootstrap-sb-admin-2-1.0.7/bower_components/morrisjs/morris.min.js"></script>*@
+    <!-- Navbar changer user's script -->
+    <script>
+        $(document).ready(function () {
+            checkpage();
+
+        });
+
+        var usersApp = angular.module("usersApp", []);
+        var userId = 0;
+        var names = ["User 1", "User 2", "User 3"];
+
+
+        var mode = '@Session["Roles"]';
+        var currentDocId = null;
+
+        var urlGetDocumentsList = '@Url.Action("GetListOfDocuments", "Cabinet")';
+        var urlGetDocument = '@Url.Action("GetDocument", "Cabinet")';
+        var urlExportDocument = '@Url.Action("ExportDocument", "Cabinet")';
+        var urlImportDocument = '@Url.Action("ImportDocument", "Cabinet")';
+        var urlIndex = '@Url.Action("Cabinet", "Cabinet")';
+        var urlSetId = '@Url.Action("SetCurrentId", "Cabinet")';
+        var urlGetOrdersList = '@Url.Action("GetOrdersList", "Cabinet")';
+        var urlGetBorders = '@Url.Action("GetBorders", "Cabinet")';
+        var urlGetChart = '@Url.Action("GetChart", "Cabinet")';
+        var urlGetChart2 = '@Url.Action("GetChart2", "Cabinet")';
+        var urlGetTransactions = '@Url.Action("GetTransactions", "Cabinet")';
+        var urlDownload = '@Url.Action("Download", "Documents")';
+        var urlGetModalXls = '@Url.Action("GetModalXls", "Documents")';
+        var urlGetDetails = '@Url.Action("GetDetails", "Documents")';
+        var urlUpdateSource = '@Url.Action("UpdateSourceCards", "Cabinet")';
+        var urlMakePurchase = '@Url.Action("MakePurchase", "Cabinet")';
+        var urlGetAllOrders = '@Url.Action("GetAllOrdersForUser", "Operations")';
+        var urlRemoveProject = '@Url.Action("RemoveProject", "Documents")';
+        var urlReportLog = '@Url.Action("GetLog", "Documents")';
+        var empty = "<div><h3>Данные отсутствуют</h3></div>";
+
+        var sheetModal = new Object();
+
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#piece").attr("style", "");
+                for (var i = 0; i <= 14; i++) {
+                    $("#side" + i).attr("style", "");
+                }
+            }, 1500);
+
+            //sheetModal = document.createElement('<div id=\"sheet-markup\" style=\"position: absolute; width: 98%; height:97\"><\div>')
+        });
+
+
+
+    </script>
+    @*@Scripts.Render("~/bundles/scripts")*@
+    @Scripts.Render("~/bundles/userScripts")
+
+
+    <script>
+
+        var choosedCell = { documentId: 0, rowNumber: 0, columnNumber: 0, sheetNumber: 0 };
+        var jacket;
+
+        function getChildNode(dom, rowNum, name) {
+            var row;
+            for (var i = 0; i < dom.childNodes.length; i++) {
+                if ('row' + rowNum == dom.childNodes[i].getAttribute('id')) {
+                    row = dom.childNodes[i];
+                }
+            }
+            for (var i = 0; i < row.childNodes.length; i++) {
+                if (name == row.childNodes[i].getAttribute('id')) {
+                    return row.childNodes[i];
+                }
+            }
+
+            return null;
+        }
+
+        function appendLine(additional, data) {
+
+            var chart = document.createElement('div')
+            chart.setAttribute('id', "line_chart" + additional);
+            chart.setAttribute('width', 500);
+            chart.setAttribute('height', 500);
+            var item = getChildNode(jacket, data.position.Row, 'cell' + data.position.Row + data.position.Column);
+            item.appendChild(chart);
+            //return str;
+        }
+
+        function appendStacked(additional, data) {
+            //var str = "<div id=\"stacked_chart" + additional + "\" width=\"400\" height=\"200\"></div>";
+            var chart = document.createElement('div')
+            chart.setAttribute('id', "stacked_chart" + additional);
+            chart.setAttribute('width', 500);
+            chart.setAttribute('height', 500);
+            var item = getChildNode(jacket, data.position.Row, 'cell' + data.position.Row + data.position.Column);
+            item.appendChild(chart);
+            //return str;
+        }
+
+        function appendNonStacked(additional, data) {
+            //var str = "<div id=\"stacked_chart" + additional + "\" width=\"400\" height=\"200\"></div>";
+            var chart = document.createElement('div')
+            chart.setAttribute('id', "non_stacked_chart" + additional);
+            chart.setAttribute('width', 500);
+            chart.setAttribute('height', 500);
+            var item = getChildNode(jacket, data.position.Row, 'cell' + data.position.Row + data.position.Column);
+            item.appendChild(chart);
+            //return str;
+        }
+
+        function appendPie(additional, data) {
+            //  var str = "<div id=\"pie_chart" + additional + "\" width=\"400\" height=\"200\"></div>";
+            var chart = document.createElement('div');
+
+            chart.setAttribute('id', "pie_chart" + additional);
+            chart.setAttribute('width', 500);
+            chart.setAttribute('height', 500);
+            var item = getChildNode(jacket, data.position.Row, 'cell' + data.position.Row + data.position.Column);
+            item.appendChild(chart);
+        }
+
+        function drawPie(additional, data) {
+            var chartDiv = document.getElementById("pie_chart" + additional);
+
+            var dataArr = google.visualization.arrayToDataTable(data);
+            var options = {
+                'title': data.description,
+                'width': 700,
+                'height': 400,
+            };
+            var chart = new google.visualization.PieChart(chartDiv);
+
+            chart.draw(dataArr, options);
+
+        }
+
+        function drawStacked(additional, data) {
+            var dataArr = new google.visualization.arrayToDataTable(data.elements);
+
+            var options = {
+                'width': 700,
+                'height': 400,
+                bar: { groupWidth: '75%' },
+                hAxis: { format: 'percent' },
+                isStacked: true,
+                title: data.title
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('stacked_chart' + additional));
+            chart.draw(dataArr, options);
+        }
+
+        function drawNonStacked(additional, data) {
+            var dataArr = new google.visualization.arrayToDataTable(data.elements);
+
+            var options = {
+                'width': 700,
+                'height': 400,
+                bar: { groupWidth: '90%' },
+                isStacked: false,
+                title: data.description
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('non_stacked_chart' + additional));
+            chart.draw(dataArr, options);
+        }
+
+        function drawLine(additional, data) {
+            var dataArr = google.visualization.arrayToDataTable(data.elements);
+
+            var options = {
+                title: data.description,
+                'width': 700,
+                'height': 400,
+            };
+
+            if (data.type == "dotted") {
+                options = {
+                    title: data.description,
+                    'width': 700,
+                    'height': 400,
+                    pointsVisible: true,
+                    legend: { position: 'bottom' }
+                }
+            };
+            if (data.type == "curved") {
+                options = {
+                    title: data.description,
+                    'width': 700,
+                    'height': 400,
+                    curveType: 'function',
+                    legend: { position: 'bottom' }
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById("line_chart" + additional));
+            chart.draw(dataArr, options);
+
+        }
+
+        function appendTable(additional, data) {
+            additional = Math.floor((Math.random() * 1000000) + 1);
+            var table = document.createElement('table');
+            table.setAttribute("id", "modal_table" + additional);
+            table.setAttribute("class", "table table-bordered");
+
+            var table_body = document.createElement("tbody");
+            table_body.setAttribute("id", "table_body_modal" + additional);
+
+            table.appendChild(table_body);
+
+            var item = getChildNode(jacket, data.position.Row, 'cell' + data.position.Row + data.position.Column);
+            item.appendChild(table);
+
+            // Шапка
+            var columns = new Array();
+
+            for (key in data.rows[0].cells) {
+                columns.push({ 'title': data.rows[0].cells[key].value, 'field': data.rows[0].cells[key].value });
+            }
+
+            // Тело таблицы
+            var body = new Array();
+
+            for (var i = 1; i < data.rows.length; i++) {
+
+                var rowNew = new Object();
+
+                for (var j = 0; j < data.rows[i].cells.length; j++) {
+                    if (data.rows[i].cells[j].cellId != 0) {
+                        rowNew[columns[j].title] = "<a onclick=\"getCharts(" + data.rows[i].cells[j].cellId + ")\">" +
+                        data.rows[i].cells[j].value +
+                        "</a>";
+                    }
+                    else {
+                        rowNew[columns[j].title] = data.rows[i].cells[j].value;
+                    }
+                }
+
+                body.push(rowNew);
+            }
+
+
+            return { 'columns': columns, 'body': body, 'additional': additional };
+
+            //var tableHeadCell = document.createElement('td');
+            //tableHeadCell.innerText = data.description;
+            //var tableHead = document.createElement('tr');
+            //tableHead.appendChild(tableHeadCell);
+
+            //var item = getChildNode(jacket, data.position.Row, 'cell' + data.position.Row + data.position.Column);
+            //item.appendChild(tableHead);
+
+            //var table = document.createElement('table');
+            //table.appendChild(tableHead);
+            //table.setAttribute('width', 400);
+            //table.setAttribute('height', 300);
+            //item.appendChild(table);
+
+            //for (var i = 0; i < data.rows.length; i++) {
+            //    //htmls = htmls + "<tr>";
+            //    var row = document.createElement('tr');
+            //    table.appendChild(row);
+
+            //    for (var j = 0; j < data.rows[i].cells.length; j++) {
+            //        var cell = document.createElement('td');
+
+            //        cell.setAttribute('class', 'table_cell');
+
+            //        if (data.rows[i].cells[j].cellId == 0) {
+            //            row.appendChild(cell);
+            //            var font = document.createElement('font');
+            //            font.setAttribute('color', data.rows[i].cells[j].style.fontColor);
+            //            font.setAttribute('face', data.rows[i].cells[j].style.fontFamily);
+            //            font.setAttribute('face', data.rows[i].cells[j].style.fontSize);
+            //            font.innerText = data.rows[i].cells[j].value;
+            //            cell.appendChild(font);
+
+            //            cell.style.align = data.rows[i].cells[j].style.align;
+            //            cell.style.background = data.rows[i].cells[j].style.backgroundColor;
+            //        }
+            //        else {
+            //            var ref = document.createElement('a');
+            //            ref.setAttribute('onclick', "getCharts(" + data.rows[i].cells[j].cellId + ")");
+            //            cell.appendChild(ref);
+            //            ref.innerText = data.rows[i].cells[j].value;
+            //            row.appendChild(cell);
+            //        }
+            //    }
+            //}
+        }
+
+        function drawTable(tableObj) {
+            $("#modal_table" + tableObj.additional).bootstrapTable({
+                data: tableObj.body,
+                striped: true,
+                pagination: true,
+                pageSize: 20,
+                pageList: [10, 25, 50, 100, 200],
+                search: true,
+                showColumns: true,
+                showRefresh: false,
+                sortable: true,
+                minimumCountColumns: 2,
+                columns: tableObj.columns
+            });
+        }
+
+        function CELL_MOUSE_OUT_CALLBACK_FN(value, row, column, sheetId, cellObj, store) {
+            choosedCell.documentId = currentDocId;
+            choosedCell.rowNumber = row;
+            choosedCell.columnNumber = column;
+            choosedCell.sheetNumber = sheetId;
+        };
+
+        function getAnalytics(dId, sName) {
+            $("body").append("<div id=\"dvLoading\"></div>");
+            $("#page-wraper").append("<div id=\"mask\"></div>");
+            $.ajax({
+                type: "POST",
+                url: urlGetChart2,
+                data: {'documentId': dId, 'sheetName': sName} // На контроллере мы получим все id шитов, принадлежащие данному документу, а по id шитов извлечем границы
+            }).then(function (result) {
+                if (result == '' || result == '[]') {
+                    createModalWindow(empty, "Аналитика " + sName); return 0;
+                }
+                chartsResultHandler(result);
+                choosedCell.documentId = 0;
+                choosedCell.rowNumber = 0;
+                choosedCell.columnNumber = 0;
+                choosedCell.sheetNumber = 0;
+            }).then(function () {
+                $("#dvLoading").remove();
+                $("#mask").remove();
+            });
+
+
+        }
+
+        //function getAnalytics(docId) {
+        //    $("body").append("<div id=\"dvLoading\"></div>");
+        //    $("#page-wraper").append("<div id=\"mask\"></div>");
+        //    $.ajax({
+        //        type: "POST",
+        //        url: urlGetChart,
+        //        data: { 'documentId': dId, 'rowNumber': rNum, 'columnNumber': cNum, 'sheetNumber': sNum } // На контроллере мы получим все id шитов, принадлежащие данному документу, а по id шитов извлечем границы
+        //    }).then(function (result) {
+        //        if (result == '') { return 0; }
+        //        chartsResultHandler(result);
+        //        choosedCell.documentId = 0;
+        //        choosedCell.rowNumber = 0;
+        //        choosedCell.columnNumber = 0;
+        //        choosedCell.sheetNumber = 0;
+        //    }).then(function () {
+        //        $("#dvLoading").remove();
+        //        $("#mask").remove();
+        //    });
+
+
+        //}
+
+        function chartsResultHandler(result) {
+            var chartData = JSON.parse(result);
+
+            if (chartData['state'] !== undefined || chartData[0].position === undefined) {
+                jacket = document.createElement('div');
+                jacket.innerText = "Empty";
+                createModalWindow(empty, "Данные отсутствуют");
+                return 0;
+            }
+
+            jacket = document.createElement('div');
+
+            var rowMax = 0;
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].position.Row > rowMax) { rowMax = chartData[i].position.Row }
+            }
+
+            var cellMax = 0;
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].position.Column > cellMax) { cellMax = chartData[i].position.Column }
+            }
+
+            for (var i = 1; i <= rowMax; i++) {
+                var row = document.createElement('div');
+                row.setAttribute('class', 'item-list');
+                row.setAttribute('id', 'row' + i);
+                jacket.appendChild(row);
+                for (var j = 1; j <= cellMax; j++) {
+                    var cell = document.createElement('div');
+                    cell.setAttribute('class', 'item');
+                    cell.setAttribute('id', 'cell' + i + j);
+                    row.appendChild(cell);
+                }
+            }
+
+            var itemsJustForTables = new Array();
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].typeId == 1) {
+                    appendPie(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 5) {
+                    appendStacked(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 6) {
+                    appendNonStacked(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 2) {
+                    appendLine(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 4) { itemsJustForTables.push(appendTable(chartData[i].id, chartData[i])); }
+
+
+            }
+
+            createModalWindow(jacket.innerHTML, "Данные");
+
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].typeId == 1) { drawPie(chartData[i].id, chartData[i].elements) }
+                if (chartData[i].typeId == 5) { drawStacked(chartData[i].id, chartData[i]) }
+                if (chartData[i].typeId == 2) { drawLine(chartData[i].id, chartData[i]) }
+                if (chartData[i].typeId == 6) { drawNonStacked(chartData[i].id, chartData[i]) }
+                if (chartData[i].typeId == 4) { drawTable(itemsJustForTables[i]) }
+            }
+
+
+        };
+
+        function correctTransactionsList() {
+            var inputText = $("#inputdefault").val();
+            var list = document.getElementsByClassName("list-group-item transactions-list-item");
+
+            for (var i = 0; i < list.length; i++) {
+                var currStr = list[i].innerText;
+
+                if (currStr.indexOf(inputText) == -1) {
+                    list[i].style.display = 'none';
+                }
+                else {
+                    list[i].style.display = '';
+                }
+            }
+
+
+
+        }
+
+        function transactionsResultHandler(result) {
+
+            var transactionsInfo = JSON.parse(result);
+            transactionsInfo = transactionsInfo[0];
+
+            if (transactionsInfo['state'] !== undefined || transactionsInfo['typeId'] !== undefined) {
+                jacket = document.createElement('div');
+                jacket.innerText = "Empty";
+                createModalWindow(empty, "Проводки");
+                return 0;
+            }
+
+            jacket = document.createElement('div');
+
+            var container = document.createElement('div');
+            jacket.setAttribute("class", "container");
+
+            var row = document.createElement('div');
+            row.setAttribute("class", "row");
+
+            var col = document.createElement('div');
+            col.setAttribute("class", "col-xs-12");
+
+            //    var textGroup = document.createElement('div');
+            //    textGroup.setAttribute("class", "form-group");
+
+            //    var textLabel = document.createElement('label');
+            //    textLabel.setAttribute("for", "inputdefault");
+            //    textLabel.innerText = "Поиск";
+
+            //    var textInput = document.createElement('input');
+            //    textInput.setAttribute("class", "form-control");
+            //    textInput.setAttribute("id", "inputdefault");
+            //    textInput.setAttribute("type", "textarea");
+            ////    textInput.setAttribute("onchange", "correctTransactionsList()")
+
+            //    textGroup.appendChild(textLabel);
+            //    textGroup.appendChild(textInput);
+
+            //    col.appendChild(textGroup);
+
+
+            var block = document.createElement('div');
+            block.setAttribute("class", "well");
+            block.setAttribute("style", "max-height: 400px; overflow: auto; background: transparent;");
+
+            var table = document.createElement('table');
+            table.setAttribute("id", "move-table");
+
+            block.appendChild(table);
+
+            var select = document.createElement('select');
+
+            select.setAttribute("class", "category-select-option");
+
+            var selectedOption = document.createElement('option');
+            selectedOption.setAttribute("disabled", true);
+            selectedOption.innerText = "Choose category";
+            select.appendChild(selectedOption);
+
+            var option1 = document.createElement('option');
+            //option1.setAttribute("class", "category-select-option");
+            option1.innerText = "Красное";
+
+            var option2 = document.createElement('option');
+            //option2.setAttribute("class", "category-select-option");
+            option2.innerText = "Желтое";
+
+            var option3 = document.createElement('option');
+            //option3.setAttribute("class", "category-select-option");
+            option3.innerText = "Зеленое";
+
+            var option4 = document.createElement('option');
+            //option4.
+            option4.innerText = "Синее";
+
+            select.appendChild(option1);
+            select.appendChild(option2);
+            select.appendChild(option3);
+            select.appendChild(option4);
+
+            var selectTitle = document.createElement('h3');
+            selectTitle.innerText = "Выбор категории";
+
+
+
+            col.appendChild(table);//block);
+            col.appendChild(selectTitle);
+            col.appendChild(select);
+            row.appendChild(col);
+            container.appendChild(row);
+
+
+
+            jacket.appendChild(container);
+
+            createModalWindow(jacket.innerHTML, "Проводки");
+            transactions(transactionsInfo);
+
+        }
+
+        function createModalWindow(html, name) {
+            var win = Ext.create('widget.window', { // создание окна
+                title: name,
+                html: html,
+                x: 0,                      // позиция относительно родительского окна.
+                y: 0,
+                width: '81%',
+                height: '80%',                    // - width: '30%',
+                // ширина. Строковое значение задается по стандарту
+                // - px,%, em и т.д.
+                autoHeight: true,
+                autoScroll: true,           // скроллинг если текст не влезает.
+                maximizable: true,          // значок «раскрыть окно на весь экран»
+                bodyCls: 'red',              // установка класса для содержимого окна.
+                //Здесь .css1 {background:#fff;color:red;}
+                bodyPadding: '10px',         // установка паддинга для содержимого.
+                // Лучше конечно через bodyCls
+                bodyStyle: 'background-color:#fff', // прямое указание стиля для содержимого окна
+                closeAction: 'destroy',        // !!! Важно. Указание на то, что окно при закрывании
+                //  удаляется вместе с содержимым,
+
+                /*  этот блок параметров лишний. Они и так выставлены
+                по умолчанию так как указано ниже  */
+
+                shadow: true,               // тень
+                // resizable: false,            // возможность изменения размеров окна.
+                draggable: true,            // возможность перетаскивания окна.
+                closable: true,            // спрятать иконку закрытия окна в заголовке
+                modal: false,                //  modal задает модальное окно.
+                resizable: true,// При открсытии делает недоступными все остальные окна
+                headerPosition: 'top', //  заголовок  и кнопку закрытия разместим
+                constrain: true,
+
+                //справа {left, top, right, bottom}
+            });
+
+            if (name != "Проводки" && name != "Данные") {
+                win.resizable = false;
+            }
+
+            win.show();
+        }
+
+        function resultHandler(result) {
+            var chartData = JSON.parse(result);
+            jacket = document.createElement('div');
+
+            var rowMax = 0;
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].position.Row > rowMax) { rowMax = chartData[i].position.Row }
+            }
+
+            var cellMax = 0;
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].position.Column > cellMax) { cellMax = chartData[i].position.Column }
+            }
+
+            for (var i = 1; i <= rowMax; i++) {
+                var row = document.createElement('div');
+                row.setAttribute('class', 'item-list');
+                row.setAttribute('id', 'row' + i);
+                jacket.appendChild(row);
+                for (var j = 1; j <= cellMax; j++) {
+                    var cell = document.createElement('div');
+                    cell.setAttribute('class', 'item');
+                    cell.setAttribute('id', 'cell' + i + j);
+                    row.appendChild(cell);
+                }
+            }
+
+
+            var itemsJustForTables = new Array();
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].typeId == 1) {
+                    appendPie(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 5) {
+                    appendStacked(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 6) {
+                    appendNonStacked(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 2) {
+                    appendLine(chartData[i].id, chartData[i]);
+                    itemsJustForTables.push({});
+                }
+
+                if (chartData[i].typeId == 4) { itemsJustForTables.push(appendTable(chartData[i].id, chartData[i])); }
+
+
+            }
+
+
+            var win = Ext.create('widget.window', { // создание окна
+                title: 'Данные',
+                html: jacket.innerHTML,
+                x: 0,                      // позиция относительно родительского окна.
+                y: 0,
+                width: '80%',
+                height: '80%',                    // - width: '30%',
+                // ширина. Строковое значение задается по стандарту
+                // - px,%, em и т.д.
+                autoHeight: true,
+                autoScroll: true,           // скроллинг если текст не влезает.
+                maximizable: true,          // значок «раскрыть окно на весь экран»
+                bodyCls: 'red',              // установка класса для содержимого окна.
+                //Здесь .css1 {background:#fff;color:red;}
+                bodyPadding: '10px',         // установка паддинга для содержимого.
+                // Лучше конечно через bodyCls
+                bodyStyle: 'background-color:#fff', // прямое указание стиля для содержимого окна
+                closeAction: 'destroy',        // !!! Важно. Указание на то, что окно при закрывании
+                //  удаляется вместе с содержимым,
+
+                /*  этот блок параметров лишний. Они и так выставлены
+                по умолчанию так как указано ниже  */
+
+                shadow: true,               // тень
+                resizable: true,            // возможность изменения размеров окна.
+                draggable: true,            // возможность перетаскивания окна.
+                closable: true,            // спрятать иконку закрытия окна в заголовке
+                modal: false,                //  modal задает модальное окно.
+                // При открсытии делает недоступными все остальные окна
+                headerPosition: 'top', //  заголовок  и кнопку закрытия разместим
+                //справа {left, top, right, bottom}
+            });
+
+            win.show();
+            for (var i = 0; i < chartData.length; i++) {
+                if (chartData[i].typeId == 1) { drawPie(chartData[i].id, chartData[i].elements) }
+                if (chartData[i].typeId == 5) { drawStacked(chartData[i].id, chartData[i]) }
+                if (chartData[i].typeId == 2) { drawLine(chartData[i].id, chartData[i]) }
+                if (chartData[i].typeId == 6) { drawNonStacked(chartData[i].id, chartData[i]) }
+                if (chartData[i].typeId == 4) { drawTable(itemsJustForTables[i]) }
+            }
+        }
+
+        function getCharts(modal) {
+            $.ajax({
+                type: "POST",
+                url: "/Cabinet/GetCharts/",
+                data: { 'modal': modal }
+            }).then(function (result) { if (result == '') { return 0; } resultHandler(result) });
+
+        };
+
+    </script>
+    <script src=""></script>
+</body>
+
+
+
+</html>

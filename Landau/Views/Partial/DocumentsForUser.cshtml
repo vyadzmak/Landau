@@ -1,0 +1,114 @@
+﻿<div class="panel-heading">
+    <i class="fa fa-bell fa-fw"></i> Мои заявки
+</div>
+<!-- /.panel-heading -->
+<div class="panel-body" ng-controller="DocForUserCtr">
+    <div class="list-group">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container">
+                        <label>Имя файла</label>
+                        <input type="text" name="searchinput" placeholder="Имя файла" class="form-control input-xs" ng-model="query">
+                        @*<label>Тип файла</label>
+                        <p>
+                            <select ng-model="selectedformat" ng-options="element.Title for element in TypeDocument"></select>
+                        </p>
+                        <select ng-model="itemsPerPage">
+
+                            <option selected="selected">5</option>
+                            <option>10</option>
+                            <option>15</option>
+                        </select>*@
+                    </div>
+                   
+                    <div id="dvLoading" ng-show="showdvLoading"></div>
+                    @*<div id="mask" hidden="true"></div>*@
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th ng-click="sort('FileName')" >Имя файла
+                                        @*<a href="">Имя файла <i class="glyphicon" ng-class="{'glyphicon-chevron-up':isSortUp('FileName'),'glyphicon-chevron-down':isSortDown('FileName')}"></i></a>*@
+                                    </th>
+                                    <th ng-click="sort('FileSize')">Размер
+                                        @*<a href="">Размер <i class="glyphicon" ng-class="{'glyphicon-chevron-up':isSortUp('FileSize'),'glyphicon-chevron-down':isSortDown('FileSize')}"></i> </a>*@
+                                    </th>
+                                    <th ng-click="sort('User')">Пользователь
+                                        @*<a href="">Пользователь <i class="glyphicon" ng-class="{'glyphicon-chevron-up':isSortUp('User'),'glyphicon-chevron-down':isSortDown('User')}"></i></a>*@
+                                    </th>
+                                    <th ng-click="sort('DataUpload')">Время загрузки
+                                        @*<a href="">Время загрузки <i class="glyphicon" ng-class="{'glyphicon-chevron-up':isSortUp('DataUpload'),'glyphicon-chevron-down':isSortDown('DataUpload')}"></i> </a>*@
+                                    </th>
+                                    <th>
+                                        Изображение
+                                    </th>
+                                    @*<th>
+                                        Описание
+                                    </th>*@
+                                </tr>
+                            </thead>
+                            <tr ng-repeat="element in filteredDocUser=(Docs|filter:{FileName:query,DocumentTypeInt:selectedformat.Id})|offset: currentPage*itemsPerPage |orderBy:sortField:reverse| limitTo: itemsPerPage ">
+                                <p>Найдено:<span ng-bind=" filteredDocUser.length"></span> </p>
+
+                                <td>
+                                    <span ng-bind="element.Id"></span>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Download", "Documents")/?id={{element.Id}}"><span ng-bind="element.FileName"></span></a>
+
+                                </td>
+                                <td>
+                                    <span ng-bind="element.FileSize"></span>мб
+                                </td>
+                                <td>
+                                    <span ng-bind="element.User"></span>
+                                </td>
+                                <td>
+                                    <span ng-bind="element.DataUpload"></span>
+                                </td>
+
+                                <td>
+                                    <img ng-src="{{element.Image}}" width="32" height="32" />
+                                </td>
+                                @*<td>
+                                    <span ng-bind="element.Description"></span>
+                                </td>*@
+
+
+                                @*<td>
+                                    <a href="@Url.Action("Chat", "Documents")/?documentid={{element.Id}}"> <span class="glyphicon glyphicon-envelope" aria-hidden="true" ng-if="element.StateComments==1"></span>
+                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true" ng-if="element.StateComments==0" style="color:red "></span>
+                                    </a>
+                                </td>*@
+                              
+                             
+
+                               
+
+                            </tr>
+                        </table>
+                        <nav>
+                            <ul class="pagination">
+                                <li ng-class="prevPageDisabledUser()">
+                                    <a href ng-click="prevPageUser()">« Предыдущая</a>
+                                </li>
+                                <li ng-repeat="n in rangeUser()" ng-class="{active: n == currentPage}" ng-click="setPageUser(n)">
+                                    <a href="">{{n+1}}</a>
+                                </li>
+                                <li ng-class="nextPageDisabledUser()">
+                                    <a href ng-click="nextPageUser()">Следующая »</a>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.list-group -->
+
+</div>
