@@ -1,0 +1,16 @@
+/**
+ * Enterprise Spreadsheet Solutions
+ * Copyright(c) FeyaSoft Inc. All right reserved.
+ * info@enterpriseSheet.com
+ * http://www.enterpriseSheet.com
+ */
+
+Commercial License
+------------------------------------------------------------------------------------------
+EnterpriseSheet is licensed commercially. 
+
+Please visit http://enterprisesheet.com/license.jsp for more details.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, 
+AND NON-INFRINGEMENT OF THIRD-PARTY INTELLECTUAL PROPERTY RIGHTS.
