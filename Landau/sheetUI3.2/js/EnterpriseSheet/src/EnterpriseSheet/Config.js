@@ -233,6 +233,7 @@ Ext.define('EnterpriseSheet.Config', {
                                     search: true,
                                     showColumns: false,
                                     showRefresh: false,
+                                    height: 500,
                                     sortable: true,
                                     minimumCountColumns: 2,
                                     columns: columns,

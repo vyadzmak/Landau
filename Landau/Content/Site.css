@@ -257,19 +257,21 @@ body {
     padding: 9px 0;
 }
 
-.dropdown-menu .sub-menu {
+
+
+/*.dropdown-menu .sub-menu {
     left: 100%;
     position: absolute;
     top: 0;
     visibility: hidden;
     margin-top: -1px;
-}
+}*/
 
-.dropdown-menu li:hover .sub-menu {
+/*.dropdown-menu li:hover .sub-menu {
     visibility: visible;
-}
+}*/
 
-.dropdown:hover .dropdown-menu {
+/*.dropdown:hover .dropdown-menu {
     display: block;
 }
 
@@ -293,7 +295,7 @@ body {
     left: 10px;
     top: 11px;
     left: -6px;
-}
+}*/
 
         /*table {
             width: 100%;

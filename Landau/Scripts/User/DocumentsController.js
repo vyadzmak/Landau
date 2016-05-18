@@ -99,6 +99,7 @@
             sortable: true,
             minimumCountColumns: 2,
             columns: columns,
+            height: 500,
             onClickRow: function (row, $element) {
 
                 if ($element.context.cellIndex != 5) {

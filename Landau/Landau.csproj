@@ -186,226 +186,223 @@
     <Compile Include="Controllers\OperationsController.cs" />
     <Compile Include="Controllers\TablesController.cs" />
     <Compile Include="DB\AnalyticData.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\AnalyzeLog.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\AnalyzeMessageType.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\BarChart.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\BarChartElement.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Body.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\BodyModal.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\BorderPosition.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\BorderStyle.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Cell.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\CellComments.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\CellModal.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\CellModalStyle.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\CellStyles.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\CellStyleTemplates.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\ChartTypeCatalog.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Clients.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Comments.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Document.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\DocumentControlVersion.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\DocumentInfo.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Documents.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\DocumentState.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\DocumentTypes.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\HtmlForms.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\LandauModel.Context.cs">
+    <Compile Include="DB\Landau.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LandauModel.Context.tt</DependentUpon>
+      <DependentUpon>Landau.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\LandauModel.cs">
+    <Compile Include="DB\Landau.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\LandauModel.Designer.cs">
+    <Compile Include="DB\Landau.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LandauModel.edmx</DependentUpon>
+      <DependentUpon>Landau.edmx</DependentUpon>
     </Compile>
     <Compile Include="DB\LineChart.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\LineChartElement.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\LineChartPoint.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\LineType.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\LogTable.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ModalView.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ModalViewCell.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ModalViewRow.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MoveCategories.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MoveTable.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MoveTableCell.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\MoveTableRow.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\NonStackedBarChart.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\NonStackedBarChartColumn.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\NonStackedBarChartElement.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Operations.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\OperationState.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\OperationType.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\PieChart.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\PieChartElement.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Projects.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ProjectStates.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\RelationCells.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ReportCellTypeCatalog.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ReportDocumentTypeCatalog.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Row.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\RowModal.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Settings.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Sheet.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\SourceDocumentCell.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\SourceDocumentRow.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\SourceDocuments.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\SourceDocumentSheet.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\SourceDocumentStates.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\StackedBarchart.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\StackedBarchartColumn.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\StackedBarchartElement.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\TableGroups.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\TableModal.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\TypeAnalyticData.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\UserLogins.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\UserRoles.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Users.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\ViewTypes.cs">
-      <DependentUpon>LandauModel.tt</DependentUpon>
+      <DependentUpon>Landau.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -561,22 +558,22 @@
     <Content Include="Scripts\User\OrderCtr.js" />
     <Content Include="Scripts\User\RenderController.js" />
     <Content Include="Scripts\User\SwitchController.js" />
-    <EntityDeploy Include="DB\LandauModel.edmx">
+    <EntityDeploy Include="DB\Landau.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LandauModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Landau.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DB\LandauModel.Context.tt">
+    <Content Include="DB\Landau.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LandauModel.edmx</DependentUpon>
-      <LastGenOutput>LandauModel.Context.cs</LastGenOutput>
+      <DependentUpon>Landau.edmx</DependentUpon>
+      <LastGenOutput>Landau.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB\LandauModel.edmx.diagram">
-      <DependentUpon>LandauModel.edmx</DependentUpon>
+    <Content Include="DB\Landau.edmx.diagram">
+      <DependentUpon>Landau.edmx</DependentUpon>
     </Content>
-    <Content Include="DB\LandauModel.tt">
+    <Content Include="DB\Landau.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LandauModel.edmx</DependentUpon>
-      <LastGenOutput>LandauModel.cs</LastGenOutput>
+      <DependentUpon>Landau.edmx</DependentUpon>
+      <LastGenOutput>Landau.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\Landau.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
