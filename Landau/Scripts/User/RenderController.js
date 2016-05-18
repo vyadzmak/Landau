@@ -122,6 +122,7 @@
                     pageSize: 20,
                     pageList: [10, 25, 50, 100, 200],
                     search: true,
+                    height: 500,
                     showColumns: false,
                     showRefresh: false,
                     sortable: true,
