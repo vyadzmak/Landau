@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bc8cd8ca51e44401bb1805b5125cb4a3" Name="Diagram1">
+      <Diagram DiagramId="c0898a6a317b4a309bfb9a55893bb25c" Name="Diagram1">
         <EntityTypeShape EntityType="LandauModel.AnalyticData" Width="1.5" PointX="24.5" PointY="27.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LandauModel.AnalyzeMessageType" Width="1.5" PointX="11.25" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LandauModel.BarChart" Width="1.5" PointX="26.75" PointY="20" IsExpanded="true" />
