@@ -86,6 +86,7 @@ Ext.define('EnterpriseSheet.api.SheetAPI', {
     createSheetApp : function(config){
         //window['startCounting'] = new Date();
         config = config || {};
+        //config.withoutSidebar = true;
         /*
         var store = Ext.create('EnterpriseSheet.sheet.data.SheetStore', {
             fileId: config.fileId

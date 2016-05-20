@@ -6546,7 +6546,7 @@ eval((function (x) {
 			}
 		}
 		return d
-	})('Ext.define("EnterpriseSheet.sheet.menu.ConditionMenu", {extend:` C-common` O"Scale` J#scale:"large", initComponent:function () {this.colors = {red:[255, 0, 0], green:[0, ` 0"], blue` -!` /"], orange` R#128` B"\'native\'` G!` 1!` H"pink` {&128], whit` Y$` 5!` E"yellow` ,(0]};`!o!gradC`!i+48, 105, 107`!r&90, 19`!&!3`!v%` +!38, 19` wE35, 132`!:$`#1!Tpl = (new Ext.XTemplate("rgb({0},{1},{2})")).compile()` \\"items = [{xtype:"`$S!item`$Q/conCls:"icon-compare-highlight32", text:SLANG.c`%{$_` :%_cell, menu:`!k!`%i@({`!9+minWidth:200, `!}!:`!LP`!X#-greater`!p,` 0#_than + "...", handler:`#9!on`(?%G` H", scope` :!}, ` {Wless`!C,less`!)CLess` cfequal`!>,` 0!`!(>Equal` afbetween`!=,` 0#`!->B` C"`!B+"-"` yYinclude`!F,` 0#`!4>I` C"`"=fdat`!=-date_ocurring_at`!5>Dat` igrepea`*w-` 0"_valu`"f?R` I!`$I1` i\'other_`!1%` ^5Other` s%` i)]})`!yQalculat`-=8` ;$`,W~`,{Zmax`!l,top_10`$%DMax`%4ftop`!?+[\'`!I"%\']`!*>Top` bfmi`+o.ottom`"QHi`+u,`,zX`!9!`"o-`!L%`"^AB` I!`,kkabov`+y-` 0!_averag`"h?Abov`+=gbelow`0O.low`!)FBelow`+%~`, #`#ORred-bar`+o-olorbar`"*/lorBar`!5(`,)(xt`+|"`+w"plain:true`+b&title`! #pure_`!\'!_fill, `!x#buttongroup", frame:false, height:90, layout:{` N"table", columns:3, ` .!Attrs:{style:{w`-8!"100%"}}}, defaults:`-Z,` K""padding:2px;`$x0`"].}`"B&`#^*blue`#d%`"Q!:"blue"}, ` <+green` <,` 0!` :/`$X(` D#red` 6/nativ`!2-` 0"` </orang` >-` 0"` </pink` =,pink"}]`2~~`)xJlorchang`+d-`&f"` Y!s`$w2C` S!`\'EV`\'9E12`\'B=4`&a~`"=5`\'M5grad`\':"2`%e"2red`#c!start`\'?$, stop:"yellow", end`\' 4` n!red` i$` ]!` g(red` Z3`(<4` n!blue`!N3`)S!`!(Xblu`&8"`!B=`*J5`#?%` J"`#00` \\!` h#` L3` 8"`#".`"]G`"m2`"CO`"_.`!^?white2pink` S(` 1!` z?pink2` H!`!&3` c"` 9`#+-`!0)`"~9`$["`!/-`$S)`!;#`,hz` t"`-:Mlear-`!6%`-^-lea`!S\'`-C#[`!u(` ="selecttion` B(`+Z,learS` E!ion`!w2`"p*` v#heet` W=heet`"i4`"GOmanage`"`7` 1$_` D"ment`$E5M` >!`!G3;` @!callParent();}, bind`"/!:fun`#,! (`"d!) {` L!` (! = ` #!;}, `#H\'Greater` P\') {var avg = ` V&.getAverageOf`$2%(3);var` u"Id` A-`!S!Id();SPOP.show`!2%Bool({` F!`"X"` &!, title`#5#g`!Y"_than, label` 3#set_`1q!_for_` A#, value:avg, applyCallback:{fn`":\'o`"?#opt = `3N#` ^#", base:o.base`2t$o.` #!}`#~"`";"s`%}\'Fo`\'\'&("bool` K!", opt,`"y$`$L!`$h\'}` ,!`$%\'Less`#QX`#1Rless`#C=less`##Zless`"ko`#4=Equal`"T~`#F,equal`#68` :#`"wX` ^!`"R~`#B.Betwee`!T() {`"u/` A"`"k<b` A"`"q8` :%`"SM` S#`"$~`"t.Include`%Z~`#A,i`!3"`#58` :%`&$X` ^#`"Z~`#J.Repea`2I(`&L1` @"`"o<r` A!_`"e!`"x8cell`"SO` y"`"#~`"s.Dat`&O+`"q.Date`"a<date_ocurring_at`"m4` 6.`"\\Mdat`%.~`"x/Abov`"k=`)]#`"o<above_a` G"`"t4` 6+`"XM` S#`#$$SCONST.ABOVE_AVERAGE`"8~`/_"low`"Scbelow`"z<` 6+`"ScBELOW`"8~`#.(Max`"x<Pos` #!`"y<top_10`,E:max` 9$setAsTxt` 9\'as`"xOmax`(k~`#\'.Top`"Rc[\'`#4"%\']`"4top`# 3percent_`#7$maxV`3I!100`"zOtop`"K~`&S/i`!N(`&)Ybottom`&G>in`%xmin`":~`-)/`"L!`&#e`#7%`&T7` =#`%p~e:"`!&"`"W~`#N\'lorBar`!N\'btn`!M*pos:"red", neg:"green"};if` A(color = `!Y!` (!s[btn` %"]` H!` &!) {` m\'` D&Tpl.`#+!` @#`!\'"` ,0[255 -`!+"[0], ` $(1]` "*2]])};}}`"pA` N!bar`#,$` P!hide(`##(Change`"v8star`&O#grad` Q!s.`#3!, end` *-red`#@,` _!`#H$` A&`#O!` 7!];` A"op` -5op` ?"end` -3end`$6"` n!`$3%opt || {};opt`!)" =`!M";}` I"op` 55`!M!stop` F"end` 43`!R"end`#tIgrad`$(6lea` H&` ^%`+$*`!!\'clear` x2` e)he`!J\'` J@` g"heet` a$Manage` N3`,S.` I"`,Q.});}});'));
+	})('Ext.define("EnterpriseSheet.sheet.menu.ConditionMenu", {extend:` C-common` O"Scale` J#scale:"large", initComponent:function () {this.colors = {red:[255, 0, 0], green:[0, ` 0"], blue` -!` /"], orange` R#128` B"\'native\'` G!` 1!` H"pink` {&128], whit` Y$` 5!` E"yellow` ,(0]};`!o!gradC`!i+48, 105, 107`!r&90, 19`!&!3`!v%` +!38, 19` wE35, 132`!:$`#1!Tpl = (new Ext.XTemplate("rgb({0},{1},{2})")).compile()` \\"items = [{xtype:"`$S!item`$Q/conCls:"icon-compare-highlight32", text:SLANG.c`%{$_` :%_cell, menu:`!k!`%i@({`!9+minWidth:200, `!}!:`!LP`!X#-greater`!p,` 0#_than + "...", handler:`#9!on`(?%G` H", scope` :!}, ` {Wless`!C,less`!)CLess` cfequal`!>,` 0!`!(>Equal` afbetween`!=,` 0#`!->B` C"`!B+"-"` yYinclude`!F,` 0#`!4>I` C"`"=fdat`!=-date_ocurring_at`!5>Dat` igrepea`*w-` 0"_valu`"f?R` I!`$I1` i\'other_`!1%` ^5Other` s%` i)]})`!yQalculat`-=8` ;$`,W~`,{Zmax`!l,top_10`$%DMax`%4ftop`!?+[\'`!I"%\']`!*>Top` bfmi`+o.ottom`"QHi`+u,`,zX`!9!`"o-`!L%`"^AB` I!`,kkabov`+y-` 0!_averag`"h?Abov`+=gbelow`0O.low`!)FBelow`+%~`, #`#ORred-bar`+o-olorbar`"*/lorBar`!5(`,)(xt`+|"`+w"plain:true`+b&title`! #pure_`!\'!_fill, `!x#buttongroup", frame:false, height:50, layout:{` N"table", columns:3, ` .!Attrs:{style:{w`-8!"100%"}}}, defaults:`-Z,` K""padding:2px;`$x0`"].}`"B&`#^*blue`#d%`"Q!:"blue"}, ` <+green` <,` 0!` :/`$X(` D#red` 6/nativ`!2-` 0"` </orang` >-` 0"` </pink` =,pink"}]`2~~`)xJlorchang`+d-`&f"` Y!s`$w2C` S!`\'EV`\'9E12`\'B=4`&a~`"=5`\'M5grad`\':"2`%e"2red`#c!start`\'?$, stop:"yellow", end`\' 4` n!red` i$` ]!` g(red` Z3`(<4` n!blue`!N3`)S!`!(Xblu`&8"`!B=`*J5`#?%` J"`#00` \\!` h#` L3` 8"`#".`"]G`"m2`"CO`"_.`!^?white2pink` S(` 1!` z?pink2` H!`!&3` c"` 9`#+-`!0)`"~9`$["`!/-`$S)`!;#`,hz` t"`-:Mlear-`!6%`-^-lea`!S\'`-C#[`!u(` ="selecttion` B(`+Z,learS` E!ion`!w2`"p*` v#heet` W=heet`"i4`"GOmanage`"`7` 1$_` D"ment`$E5M` >!`!G3;` @!callParent();}, bind`"/!:fun`#,! (`"d!) {` L!` (! = ` #!;}, `#H\'Greater` P\') {var avg = ` V&.getAverageOf`$2%(3);var` u"Id` A-`!S!Id();SPOP.show`!2%Bool({` F!`"X"` &!, title`#5#g`!Y"_than, label` 3#set_`1q!_for_` A#, value:avg, applyCallback:{fn`":\'o`"?#opt = `3N#` ^#", base:o.base`2t$o.` #!}`#~"`";"s`%}\'Fo`\'\'&("bool` K!", opt,`"y$`$L!`$h\'}` ,!`$%\'Less`#QX`#1Rless`#C=less`##Zless`"ko`#4=Equal`"T~`#F,equal`#68` :#`"wX` ^!`"R~`#B.Betwee`!T() {`"u/` A"`"k<b` A"`"q8` :%`"SM` S#`"$~`"t.Include`%Z~`#A,i`!3"`#58` :%`&$X` ^#`"Z~`#J.Repea`2I(`&L1` @"`"o<r` A!_`"e!`"x8cell`"SO` y"`"#~`"s.Dat`&O+`"q.Date`"a<date_ocurring_at`"m4` 6.`"\\Mdat`%.~`"x/Abov`"k=`)]#`"o<above_a` G"`"t4` 6+`"XM` S#`#$$SCONST.ABOVE_AVERAGE`"8~`/_"low`"Scbelow`"z<` 6+`"ScBELOW`"8~`#.(Max`"x<Pos` #!`"y<top_10`,E:max` 9$setAsTxt` 9\'as`"xOmax`(k~`#\'.Top`"Rc[\'`#4"%\']`"4top`# 3percent_`#7$maxV`3I!100`"zOtop`"K~`&S/i`!N(`&)Ybottom`&G>in`%xmin`":~`-)/`"L!`&#e`#7%`&T7` =#`%p~e:"`!&"`"W~`#N\'lorBar`!N\'btn`!M*pos:"red", neg:"green"};if` A(color = `!Y!` (!s[btn` %"]` H!` &!) {` m\'` D&Tpl.`#+!` @#`!\'"` ,0[255 -`!+"[0], ` $(1]` "*2]])};}}`"pA` N!bar`#,$` P!hide(`##(Change`"v8star`&O#grad` Q!s.`#3!, end` *-red`#@,` _!`#H$` A&`#O!` 7!];` A"op` -5op` ?"end` -3end`$6"` n!`$3%opt || {};opt`!)" =`!M";}` I"op` 55`!M!stop` F"end` 43`!R"end`#tIgrad`$(6lea` H&` ^%`+$*`!!\'clear` x2` e)he`!J\'` J@` g"heet` a$Manage` N3`,S.` I"`,Q.});}});'));
 eval((function (x) {
 		var d = "";
 		var p = 0;
@@ -13735,7 +13735,7 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 	requires : ["Ext.layout.container.Card", "Ext.toolbar.Spacer", "EnterpriseSheet.sheet.model.InfoModel", "EnterpriseSheet.sheet.toolbar.options.PictureOption", "EnterpriseSheet.sheet.toolbar.options.WedgitOption", "EnterpriseSheet.sheet.toolbar.options.SearchOption", "EnterpriseSheet.sheet.toolbar.options.ChartOption", "EnterpriseSheet.sheet.toolbar.options.TableTemplateOption", "EnterpriseSheet.sheet.toolbar.options.CellTemplateOption", "EnterpriseSheet.sheet.toolbar.options.ConditionOption"],
 	border : false,
 	
-	height : 90,
+	height : 50,
 	layout : {
 		type : "hbox",
 		
@@ -13770,7 +13770,7 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 	},
 	initComponent : function () {
 		this.initOptionPane();
-	/*	this.searchBtn = new Ext.Button({
+		this.searchBtn = new Ext.Button({
 				iconCls : "icon-lookup32",
 				cls : "option-button",
 				scale : "large",
@@ -13841,7 +13841,7 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 				name : "cell",
 				handler : this.toggleOption,
 				scope : this
-			});*/
+			});
 		this.chartBtn = new Ext.Button({
 				scale : "large",
 				iconCls : "icon-chart32",
@@ -13857,13 +13857,13 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 		this.initInfoStore();
 		this.infoView = new Ext.view.View({
 				store : this.infoStore,
-				tpl : new Ext.XTemplate(['<tpl for=".">', '<div class="ss-cal-info-item {[0===xindex%2?"ss-cal-info-item-strip":""]}">', '<div class="ss-cal-info-item-inner" data-qtip="{value}">', '<div class="ss-cal-info-title">{display}</div>', '<div class="ss-cal-info-value">{value}</div>', "</div>", "</div>", "</tpl>"].join(""), {
+				tpl : new Ext.XTemplate(['<tpl for=".">', '<div  style="display: inline-block; width: 75px;" class="ss-cal-info-item {[0===xindex%2?"ss-cal-info-item-strip":""]}">', '<div class="ss-cal-info-item-inner" data-qtip="{value}">', '<div class="ss-cal-info-title">{display}</div>', '<div class="ss-cal-info-value">{value}</div>', "</div>", "</div>", "</tpl>"].join(""), {
 					compile : true
 				}),
 				itemSelector : "div.ss-cal-info-item",
 				cls : "ss-info-bar",
 				autoHeight : true,
-				width : 140
+				width : 400
 			});
 		this.sidebar = new Ext.toolbar.Toolbar({
 				dock : "left",
@@ -13884,7 +13884,7 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 		})
 	},
 	initInfoStore : function () {
-		/*this.infoStore = new Ext.data.Store({
+		this.infoStore = new Ext.data.Store({
 				model : "EnterpriseSheet.sheet.model.InfoModel",
 				layout : {
 					type : "hbox",
@@ -13919,7 +13919,7 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 		this.avgRec = this.infoStore.getAt(1);
 		this.maxRec = this.infoStore.getAt(2);
 		this.minRec = this.infoStore.getAt(3);
-		this.countRec = this.infoStore.getAt(4)*/
+		this.countRec = this.infoStore.getAt(4)
 	},
 	initOptionPane : function () {
 		this.pinTool = new Ext.panel.Tool({
@@ -14020,7 +14020,7 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 		this.optionPane.getLayout().setActiveItem(activeOption);
 		if (!this.optionPane.isVisible()) {
 			var h = this.getHeight();
-			this.optionPane.setHeight(h);
+			this.optionPane.setHeight(500);
 			this.optionPane.showAt(-1000, -1000);
 			if (this.suspendMintorMouseDown) {
 				this.setWidth(this.sidebar.getWidth() + optionPaneWidth - 1)
@@ -14032,8 +14032,8 @@ Ext.define("EnterpriseSheet.sheet.toolbar.Sidebar", {
 					y : el.getTop()
 				},
 				to : {
-					x : x,
-					y : y
+					x : 100,
+					y : 100
 				},
 				callback : function () {
 					if (callback) {

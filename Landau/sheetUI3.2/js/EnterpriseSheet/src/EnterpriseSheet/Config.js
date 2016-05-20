@@ -190,6 +190,8 @@ Ext.define('EnterpriseSheet.Config', {
                                 }));
                             }
 
+                            
+
                             columns.push({
                                 'title': "Тип документа",
                                 'field': "Тип документа",
@@ -201,6 +203,11 @@ Ext.define('EnterpriseSheet.Config', {
                                 'field': "Тип данных",
                                 'sortable': true
                             });
+
+                            columns[1].width = 85; columns[2].width = 407; columns[3].width = 380;
+                            columns[4].width = 261; columns[5].width = 82; columns[6].width = 82;
+                            columns[7].width = 82; columns[8].width = 82;
+                            columns[9].width = 82; columns[10].width = 117;
 
                             for (var i = 1; i < d.Sheets[0].Rows.length; i++) {
 
@@ -223,6 +230,8 @@ Ext.define('EnterpriseSheet.Config', {
 
                                 sc.appendSelectionSheetModal(d.CellTypes);
                             });
+
+                            var w = $(document).width();
 
                                 $('#card_table').bootstrapTable({
                                     data: data,
